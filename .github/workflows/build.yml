@@ -22,13 +22,18 @@ jobs:
         with:
           python-version: '3.x'
           architecture: 'x64'
-          
+        
       - name: Install Python dependencies
         run: pip install beautifulsoup4
         
       - name: Create build directory
         run: mkdir -p ./build
         
-      - name: Compile LS files
-        run: |
-          bash runParser.sh ./parser.py ./docs ./build
+      - name: Build LuaLS definition files
+        run: bash runParser.sh ./parser.py ./docs ./build
+        
+      - name: Upload built definitions
+        uses: actions/upload-artifact@v4
+        with:
+          name: definitions
+          path: ./build
