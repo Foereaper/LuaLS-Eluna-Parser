@@ -15,6 +15,10 @@ LuaLS-Eluna-Parser is a tool designed to generate Language Server Protocol (LSP)
 2. **Run the Parser**: Execute the parser on the documentation HTML files. An example of this process can be seen in the PowerShell or Bash script included in this repository.
 3. **Completion**: Once the parser runs successfully, the generated definitions will be ready to use.
 
+**OR**
+
+Download the latest generated definitions from the build workflow action, alternatively from [this](https://nightly.link/Foereaper/LuaLS-Eluna-Parser/workflows/build/main/definitions.zip) link (provided by nightly).
+
 ## Installation
 1. **Install LuaLS**: Follow the [LuaLS installation instructions](https://luals.github.io/#vscode-install).
 2. **Configure Your Workspace**: Point your workspace/LSP configuration to the location of the generated definitions.
