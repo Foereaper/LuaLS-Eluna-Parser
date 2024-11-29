@@ -10,6 +10,7 @@ fi
 parserScriptPath="$1"        # Path to parser.py
 htmlParentDirectory="$2"     # Path to ElunaLuaEngine.github.io repository
 outputDirectory="$3"         # Path to output directory
+debug="${4:-false}"
 
 # Define the list of subdirectories to process
 subdirectories=("Aura" "BattleGround" "Corpse" "Creature" "ElunaQuery" "GameObject" "Group" "Guild" "Global" "Item" "Map" "Object" "Player" "Quest" "Spell" "Unit" "Vehicle" "WorldObject" "WorldPacket")
@@ -17,5 +18,5 @@ subdirectories=("Aura" "BattleGround" "Corpse" "Creature" "ElunaQuery" "GameObje
 # Iterate over each subdirectory
 for subdir in "${subdirectories[@]}"; do
     htmlDirectory="${htmlParentDirectory}/${subdir}"
-    python3 "$parserScriptPath" "$htmlDirectory" "$outputDirectory"
+    python3 "$parserScriptPath" "$htmlDirectory" "$outputDirectory" "$debug"
 done
