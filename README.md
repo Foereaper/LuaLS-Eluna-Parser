@@ -22,6 +22,7 @@ Download the latest generated definitions from the build workflow action, altern
 ## Installation
 1. **Install LuaLS**: Follow the [LuaLS installation instructions](https://luals.github.io/#vscode-install).
 2. **Configure Your Workspace**: Point your workspace/LSP configuration to the location of the generated definitions.
+3. **Enable parameter inference**: In the LuaLS configuration, enable Lua.type.inferParamType, this is required for callback parameters to function properly.
 
 ## Usage
 1. Install Python 3, Pip, and dependencies:
