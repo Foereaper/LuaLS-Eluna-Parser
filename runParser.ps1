@@ -1,11 +1,17 @@
-# Define the paths to the parser script and the parent directory containing Eluna API HTML files
-$parserScriptPath = "C:\Users\foereaper\Desktop\luaLS\LuaLS-Eluna-Parser\parser.py"
-$htmlParentDirectory = "C:\Users\foereaper\Desktop\tc\elunatrinitywotlk\src\server\game\LuaEngine\docs\build"
+# Check if the required number of arguments is provided
+if ($Args.Count -lt 3) {
+    Write-Host "Usage: runParser.ps1 <parserScriptPath> <htmlParentDirectory> <outputDirectory> [debug(false)]"
+    exit 1
+}
 
-# Define the output directory for the LuaLS workspace
-$outputDirectory = "C:\Users\foereaper\Desktop\luaLS\LuaLS-Eluna-Parser\build"
+$parserScriptPath = $Args[0]        # Path to parser.py
+$htmlParentDirectory = $Args[1]     # Path to ElunaLuaEngine.github.io repository
+$outputDirectory = $Args[2]         # Path to output directory
+$debug = $false                     # Default debug value
 
-$debug = $false
+if ($Args.Count -ge 4) {
+    $debug = [bool]$Args[3]
+}
 
 # Define the list of subdirectories to process
 $subdirectories = @("Aura", "BattleGround", "Corpse", "Creature", "ElunaQuery", "GameObject", "Group", "Guild", "Global", "Item", "Map", "Object", "Player", "Quest", "Spell", "Unit", "Vehicle", "WorldObject", "WorldPacket")
